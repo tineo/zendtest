@@ -1,0 +1,19 @@
+<h2>Users</h2>
+
+<?php foreach($users as $user): ?>
+    <div class="media">
+        <a class="pull-left" >
+            <?=$this->gravatar($user["email"])->getImgTag();?>
+
+
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading"><?=$user["username"];?></h4>
+            <?php if ($user["password"] == "twitterToLocalUser") { ?>
+                <a href="<?php echo $this->url('application',array("action" => "viewuser","username" => $user["username"] ) ) ?>">@<?=$user["username"]?></a>
+            <?php } ?>
+            <p><?=$user["email"];?></p>
+            <p><?=$user["displayName"];?></p>
+        </div>
+    </div>
+<?php endforeach ?>

@@ -1,0 +1,32 @@
+
+<div class="row">
+
+    <div class="col-md-4">
+        <!-- Test if the User is connected -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3><?=$username;?></h3>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <?php if(count($tweets)>0){ ?>
+            <?php foreach($tweets as $tweet){ ?>
+                <div class="bs-callout bs-callout-info"><p><?=$tweet->text; ?></p></div>
+            <?php }?>
+        <?php } else { ?>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 ></h3>
+                </div>
+                <div class="panel-body">
+                    <p>El usuario no tiene tweets</p>
+
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+
+
+</div>
