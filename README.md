@@ -25,6 +25,12 @@ Installation
     cd zendtest/
     php composer.phar update
 
+    #Deploy database with Doctrine Mapping
+    php vendor/bin/doctrine-module orm:schema-tool:update --force
+
+    Edit config/autoload/database.global.php for your own database configuration.
+
+
 
 Web Server Setup
 ----------------
